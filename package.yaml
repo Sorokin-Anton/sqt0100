@@ -1,0 +1,54 @@
+name:                sqt0100
+version:             0.1.0.0
+github:              "githubuser/sqt0100"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2020 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:          Short description of your package
+# category:          Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/sqt0100#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- matrices >= 0.5.0
+
+library:
+  source-dirs:       src
+
+executables:
+  sqt0100-exe:
+    main:            Main.hs
+    source-dirs:     app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=  -N
+    dependencies:
+    - sqt0100
+    - hasql
+default-extensions:
+- OverloadedStrings
+
+
+
+tests:
+  sqt0100-test:
+    main:            Spec.hs
+    source-dirs:     test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - sqt0100
